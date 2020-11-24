@@ -1,0 +1,81 @@
+
+{
+  "mods": 
+  [
+    
+    {
+      "name": "base",
+      "enabled": true
+    },
+    
+    {
+      "name": "Automatic_Train_Painter",
+      "enabled": true
+    },
+    
+    {
+      "name": "Bottleneck",
+      "enabled": true
+    },
+    
+    {
+      "name": "creative-mod",
+      "enabled": true
+    },
+    
+    {
+      "name": "deadlock-beltboxes-loaders",
+      "enabled": true
+    },
+    
+    {
+      "name": "EditorExtensions",
+      "enabled": true
+    },
+    
+    {
+      "name": "even-distribution",
+      "enabled": true
+    },
+    
+    {
+      "name": "Factorissimo2",
+      "enabled": true
+    },
+    
+    {
+      "name": "flib",
+      "enabled": true
+    },
+    
+    {
+      "name": "FNEI",
+      "enabled": true
+    },
+    
+    {
+      "name": "Nanobots",
+      "enabled": true
+    },
+    
+    {
+      "name": "RPGsystem",
+      "enabled": true
+    },
+    
+    {
+      "name": "Squeak Through",
+      "enabled": true
+    },
+    
+    {
+      "name": "stdlib",
+      "enabled": true
+    },
+    
+    {
+      "name": "VehicleSnap",
+      "enabled": true
+    }
+  ]
+}
