@@ -1,0 +1,4 @@
+body { background: url("/../img/factorio-dark-bg.jpg"); }
+.masthead { box-shadow: 0 5px 10px #000; }
+.card { background-color: #eee; color: #222; margin: 2rem 0; padding: 1rem; border-radius: 5px; }
+.glow { text-shadow: 0 0 10px #e0a800; }
