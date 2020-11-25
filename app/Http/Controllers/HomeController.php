@@ -21,7 +21,7 @@ class HomeController extends Controller
         $userMods = json_decode($request->file('mod-list')->get(), true);
 
         if (empty($userMods) || empty($userMods['mods']) || empty($userMods['mods'][0]) || empty($userMods['mods'][0]['name']) || empty($userMods['mods'][0]['enabled'])) {
-            return redirect()->back()->withErrors(['mod-list' => 'Please upload the mod-list.json file as found in C:\\Users\\[Your Name]\\AppData\\Roaming\\factorio\\mods']);
+            return redirect('/')->withErrors(['mod-list' => 'Unexpected json structure. Please upload the mod-list.json file as found in C:\\Users\\[Your Name]\\AppData\\Roaming\\Factorio\\mods']);
         }
 
         $userMods = collect($userMods['mods'])->mapWithKeys(fn ($mod) => [$mod['name'] => $mod['enabled']]);
