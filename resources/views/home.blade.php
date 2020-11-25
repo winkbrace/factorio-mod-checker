@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="/css/landing-page.css">
     <link rel="stylesheet" href="/css/style.css">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 <!-- Masthead -->
