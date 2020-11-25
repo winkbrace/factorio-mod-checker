@@ -26,7 +26,7 @@ final class Mod extends Model
     protected $primaryKey = null;
 
     // This means whether the user has the mod enabled and can't be downloaded in the mods api of course.
-    public bool $enabled;
+    public bool $enabled = false;
 
     public function releasedAt() : string
     {
