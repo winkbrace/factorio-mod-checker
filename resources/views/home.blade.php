@@ -87,10 +87,13 @@
             </p>
 
             <span><i class="fab fa-windows"></i> Windows:</span><br>
-            <pre>C:\Users\[Username]\AppData\Roaming\factorio\mods</pre>
+            <pre>C:\Users\[Username]\AppData\Roaming\Factorio\mods</pre>
 
             <span><i class="fab fa-apple"></i> Mac:</span><br>
             <pre>/Users/[Username]/Library/Application Support/factorio/mods</pre>
+
+            <span><i class="fab fa-linux"></i> Linux:</span><br>
+            <pre>~/.factorio/mods</pre>
 
         </div>
     </div>
