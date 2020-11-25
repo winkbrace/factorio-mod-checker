@@ -82,7 +82,7 @@
     <div class="row">
         <div class="col-lg-9 mx-auto card">
             <p>
-                Upload your local mod-list.json to see which mods are already updated to the latest Factorio version.<br>
+                Upload your local mod-list.json to see which of your mods are already updated to the latest Factorio version.<br>
                 You can find this file:
             </p>
 
