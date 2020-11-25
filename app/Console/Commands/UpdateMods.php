@@ -9,28 +9,14 @@ use Illuminate\Support\Facades\Http;
 
 class UpdateMods extends Command
 {
-    const PAGE_SIZE = 100;
-    protected $signature = 'update:mods {--f|force}';
+    private const PAGE_SIZE = 100;
+
+    protected $signature = 'update:mods';
     protected $description = 'This script will download the latest factorio mods metadata';
 
     public function handle()
     {
-        $row = DB::selectOne("select max(updated_at) as updated_at from last_update");
-
-        // Only refresh once per hour
-        if ($this->option('force') || empty($row->updated_at) || Carbon::parse($row->updated_at)->lt(Carbon::now()->subHour())) {
-            $this->importModsInfo();
-            DB::insert("insert into last_update (updated_at) values (:now)", ['now' => Carbon::now()->toISOString()]);
-        } else {
-            $this->line('The last refresh was less than an hour ago.');
-        }
-
-        return 0;
-    }
-
-    private function importModsInfo() : void
-    {
-        DB::statement("delete from mods");
+        DB::statement("create table if not exists mods_import (name text, title text, author text, version text, factorio_version text, released_at text)");
 
         $response = Http::get('https://mods.factorio.com/api/mods', ['page_size' => self::PAGE_SIZE, 'page' => 1])->json();
 
@@ -60,8 +46,15 @@ class UpdateMods extends Command
                 }
             }
 
-            DB::table('mods')->insert($prepared);
-            $this->line(($page * self::PAGE_SIZE) . ' of ' . $total . ' mods have been updated.');
+            DB::table('mods_import')->insert($prepared);
+            $this->line(Carbon::now()->toDateTimeString(). ' ' . ($page * self::PAGE_SIZE) . ' of ' . $total . ' mods have been updated.');
         }
+
+        // Let's minimize the offline time.
+        DB::statement("delete from mods");
+        DB::statement("insert into mods select * from mods_import");
+        DB::statement("delete from mods_import");
+
+        return 0;
     }
 }
