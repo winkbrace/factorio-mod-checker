@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Factorio Mod Checker</title>
+    <title>Factorio Mod Info</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <h1 class="mb-5 glow">Factorio Mod Info</h1>
+                <h1 class="mb-5 glow"><a href="/" class="text-white">Factorio Mod Info</a></h1>
             </div>
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                 <h3 class="text-left glow">Upload your mod-list.json</h3>
